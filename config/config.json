@@ -7,7 +7,7 @@
     },
     "timezone": "America/Chicago",
     "location": {
-        "city": "Dallas",
+        "city": "Lufkin",
         "state": "Texas",
         "country": "US"
     },
@@ -29,10 +29,10 @@
             "limit_refresh_rate_hz": 120
         },
         "runtime": {
-            "gpio_slowdown": 3
+            "gpio_slowdown": 4
         },
         "display_durations": {
-            "clock": 15,
+            "clock": 5,
             "weather": 30,
             "stocks": 30,
             "hourly_forecast": 30,
@@ -45,20 +45,20 @@
             "nba_live": 30,
             "nba_recent": 30,
             "nba_upcoming": 30,
-            "nfl_live": 30,
-            "nfl_recent": 30,
-            "nfl_upcoming": 30,
-            "ncaa_fb_live": 30,
-            "ncaa_fb_recent": 30,
-            "ncaa_fb_upcoming": 30,
+            "nfl_live": 5,
+            "nfl_recent": 5,
+            "nfl_upcoming": 5,
+            "ncaa_fb_live": 5,
+            "ncaa_fb_recent": 5,
+            "ncaa_fb_upcoming": 5,
             "ncaa_baseball_live": 30,
             "ncaa_baseball_recent": 30,
             "ncaa_baseball_upcoming": 30,
             "calendar": 30,
             "youtube": 30,
-            "mlb_live": 30,
-            "mlb_recent": 30,
-            "mlb_upcoming": 30,
+            "mlb_live": 5,
+            "mlb_recent": 5,
+            "mlb_upcoming": 5,
             "milb_live": 30,
             "milb_recent": 30,
             "milb_upcoming": 30,
@@ -76,7 +76,7 @@
         "use_short_date_format": true
     },
     "clock": {
-        "enabled": true,
+        "enabled": false,
         "format": "%I:%M %p",
         "update_interval": 1
     },
@@ -84,6 +84,8 @@
         "enabled": false,
         "update_interval": 1800,
         "units": "imperial",
+        "lat": 31.3382,
+        "lon": -94.7291,
         "display_format": "{temp}\u00b0F\n{condition}"
     },
     "stocks": {
@@ -129,7 +131,7 @@
         "duration_buffer": 0.1
     },
     "odds_ticker": {
-        "enabled": true,
+        "enabled": false,
         "show_favorite_teams_only": true,
         "games_per_favorite_team": 1,
         "max_games_per_league": 5,
@@ -213,20 +215,20 @@
         }
     },
     "nfl_scoreboard": {
-        "enabled": false,
+        "enabled": true,
         "live_priority": true,
         "live_game_duration": 30,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
         "live_odds_update_interval": 3600,
         "odds_update_interval": 3600,
-        "recent_games_to_show": 1,
-        "upcoming_games_to_show": 1,
-        "show_favorite_teams_only": true,
+        "recent_games_to_show": 16,
+        "upcoming_games_to_show": 16,
+        "show_favorite_teams_only": false,
         "favorite_teams": [
-            "TB",
+            "HOU",
             "DAL"
         ],
         "logo_dir": "assets/sports/nfl_logos",
@@ -235,33 +237,37 @@
             "nfl_live": true,
             "nfl_recent": true,
             "nfl_upcoming": true
-        }
+        },
+        "recent_update_interval": 3600,
+        "upcoming_update_interval": 3600
     },
     "ncaa_fb_scoreboard": {
-        "enabled": false,
+        "enabled": true,
+        "display_modes": {
+            "ncaa_fb_live": true,
+            "ncaa_fb_recent": true,
+            "ncaa_fb_upcoming": true
+        },
         "live_priority": true,
-        "live_game_duration": 20,
-        "show_odds": true,
+        "live_game_duration": 10,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
         "live_odds_update_interval": 3600,
         "odds_update_interval": 3600,
         "season_cache_duration_seconds": 86400,
-        "recent_games_to_show": 1,
-        "upcoming_games_to_show": 1,
-        "show_favorite_teams_only": true,
+        "recent_games_to_show": 25,
+        "upcoming_games_to_show": 25,
+        "show_favorite_teams_only": false,
         "favorite_teams": [
-            "UGA",
-            "AUB"
+            "UT",
+            "TAMU"
         ],
         "logo_dir": "assets/sports/ncaa_fbs_logos",
         "show_records": true,
-        "display_modes": {
-            "ncaa_fb_live": true,
-            "ncaa_fb_recent": true ,
-            "ncaa_fb_upcoming": true
-        }
+        "recent_update_interval": 3600,
+        "upcoming_update_interval": 3600
     },
     "ncaa_baseball_scoreboard": {
         "enabled": false,
@@ -309,17 +315,19 @@
             "ncaam_basketball_live": true,
             "ncaam_basketball_recent": true,
             "ncaam_basketball_upcoming": true
-        }
+        },
+        "recent_update_interval": 3600,
+        "upcoming_update_interval": 3600
     },
     "youtube": {
         "enabled": false,
         "update_interval": 3600
     },
     "mlb": {
-        "enabled": false,
-        "live_priority": false,
+        "enabled": true,
+        "live_priority": true,
         "live_game_duration": 30,
-        "show_odds": true,
+        "show_odds": false,
         "test_mode": false,
         "update_interval_seconds": 3600,
         "live_update_interval": 30,
@@ -327,12 +335,11 @@
         "odds_update_interval": 3600,
         "recent_update_interval": 3600,
         "upcoming_update_interval": 3600,
-        "recent_games_to_show": 1,
-        "upcoming_games_to_show": 1,
-        "show_favorite_teams_only": true,
+        "recent_games_to_show": 16,
+        "upcoming_games_to_show": 16,
+        "show_favorite_teams_only": false,
         "favorite_teams": [
-            "TB",
-            "TEX"
+            "HOU"
         ],
         "logo_dir": "assets/sports/mlb_logos",
         "show_records": true,
@@ -363,7 +370,9 @@
             "milb_live": true,
             "milb_recent": true,
             "milb_upcoming": true
-        }
+        },
+        "show_odds": false,
+        "show_favorite_teams_only": false
     },
     "text_display": {
         "enabled": false,
@@ -444,17 +453,13 @@
         "update_interval": 300,
         "scroll_speed": 1,
         "scroll_delay": 0.01,
-        "headlines_per_feed": 2,
+        "headlines_per_feed": 5,
         "enabled_feeds": [
+            "MLB",
             "NFL",
-            "NCAA FB",
-            "F1",
-            "BBC F1"
+            "NCAA FB"
         ],
-        "custom_feeds": {
-            "F1": "https://www.espn.com/espn/rss/rpm/news",
-            "BBC F1": "http://feeds.bbci.co.uk/sport/formula1/rss.xml"
-        },
+        "custom_feeds": {},
         "rotation_enabled": true,
         "rotation_threshold": 3,
         "dynamic_duration": true,
@@ -464,12 +469,12 @@
         "font_size": 8,
         "font_path": "assets/fonts/PressStart2P-Regular.ttf",
         "text_color": [
-            255,
-            255,
-            255
+            0,
+            0,
+            0
         ],
         "separator_color": [
-            255,
+            0,
             0,
             0
         ]
